@@ -2,9 +2,11 @@
   "name": "apitodo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio"
@@ -16,7 +18,8 @@
     "@prisma/client": "^7.10.0",
     "dotenv": "^18.0.6",
     "express": "^5.2.1",
-    "mysql2": "^3.24.5"
+    "mysql2": "^3.24.5",
+    "nodemon": "^3.1.14"
   },
   "devDependencies": {
     "prisma": "^7.10.0"

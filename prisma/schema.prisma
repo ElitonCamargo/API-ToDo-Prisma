@@ -31,3 +31,4 @@ model Tarefa {
   createAt  DateTime @default(now())
   updateAt  DateTime @updatedAt
 }
+

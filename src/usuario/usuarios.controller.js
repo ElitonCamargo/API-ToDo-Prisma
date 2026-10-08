@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../prisma.js";
 
-const prisma = new PrismaClient();
 
 export async function cadastrar(req, res) {
   const { nome, email, senha, avatar } = req.body;
@@ -59,6 +58,7 @@ export async function deletar(req, res) {
 }
 
 export async function logar(req, res) {
+
   const { email, senha } = req.body;
 
   const usuario = await prisma.usuario.findUnique({
@@ -66,6 +66,8 @@ export async function logar(req, res) {
       email,
     },
   });
+
+  console.log("usuario", usuario);
 
   if (!usuario) {
     return res.status(401).json({

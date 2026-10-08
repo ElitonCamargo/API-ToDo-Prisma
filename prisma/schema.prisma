@@ -1,10 +1,17 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "mysql"
 }
+
 
 model Usuario {
   id        Int      @id @default(autoincrement())
@@ -13,7 +20,7 @@ model Usuario {
   senha     String
   avatar    String?
   createAt  DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updateAt  DateTime @updatedAt 
 
   tarefas   Tarefa[]
 }
@@ -31,4 +38,3 @@ model Tarefa {
   createAt  DateTime @default(now())
   updateAt  DateTime @updatedAt
 }
-

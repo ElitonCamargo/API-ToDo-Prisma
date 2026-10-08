@@ -3,6 +3,8 @@ import usuariosRouter from "./usuario/usuarios.router.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.use("/usuarios", usuariosRouter);
 
 app.get("/", (req, res) => {

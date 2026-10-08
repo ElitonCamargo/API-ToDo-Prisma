@@ -1,0 +1,30 @@
+npm init -y
+npm install express
+npm install nodemon
+npm install --save-dev prisma dotenv
+
+
+
+
+
+# Instala o Prisma CLI para comandos no terminal
+npm install prisma --save-dev
+
+# Instala o Prisma Client para rodar no código
+npm install @prisma/client
+
+# Execute o comando de inicialização configurando o provedor diretamente para MySQL
+npx prisma init --datasource-provider mysql
+
+# Criar .env
+	DATABASE_URL="mysql://root:@localhost:3306/api_tarefas"
+	PORT=3000
+
+# Crie o schema.prisma
+
+#Criar as Tabelas e Gerar o Cliente (Migration)
+npx prisma migrate dev --name init
+
+# Abrir prisma studio
+	npx prisma studio
+

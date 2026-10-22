@@ -4,7 +4,7 @@ import prisma from "../prisma.js";
 export async function cadastrar(req, res) {
   const { nome, email, senha, avatar } = req.body;
 
-  const usuario = await prisma.usuario.create({
+  const usuario = await prisma.usuarios.create({
     data: {
       nome,
       email,
@@ -24,7 +24,7 @@ export async function alterar(req, res) {
   const { id } = req.params;
   const { nome, email, senha, avatar } = req.body;
 
-  const usuario = await prisma.usuario.update({
+  const usuario = await prisma.usuarios.update({
     where: {
       id: Number(id),
     },
@@ -45,7 +45,7 @@ export async function alterar(req, res) {
 export async function deletar(req, res) {
   const { id } = req.params;
 
-  await prisma.usuario.delete({
+  await prisma.usuarios.delete({
     where: {
       id: Number(id),
     },
@@ -61,7 +61,7 @@ export async function logar(req, res) {
 
   const { email, senha } = req.body;
 
-  const usuario = await prisma.usuario.findUnique({
+  const usuario = await prisma.usuarios.findUnique({
     where: {
       email,
     },

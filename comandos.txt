@@ -6,15 +6,21 @@ npm install --save-dev prisma dotenv
 
 
 
-
 # Instala o Prisma CLI para comandos no terminal
 npm install prisma --save-dev
 
 # Instala o Prisma Client para rodar no código
 npm install @prisma/client
 
+
+# Instala o adaptador do Prisma para MariaDB
+npm i @prisma/adapter-mariadb
+
 # Execute o comando de inicialização configurando o provedor diretamente para MySQL
 npx prisma init --datasource-provider mysql
+
+# Gerar o cliente do Prisma
+npx prisma generate 
 
 # Criar .env
 	DATABASE_URL="mysql://root:@localhost:3306/api_tarefas"
